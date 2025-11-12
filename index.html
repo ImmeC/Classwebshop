@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Imme’s Schoenenwinkel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Imme’s Schoenenwinkel</h1>
+    <div class="actions">
+      <button id="view-cart-btn" class="btn">Bekijk mandje (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="products-section" class="panel active">
+      <h2>Producten</h2>
+      <div id="products-list" class="grid"></div>
+    </section>
+
+    <section id="cart-section" class="panel">
+      <h2>Winkelmandje</h2>
+      <div id="cart-list"></div>
+      <div class="cart-summary">
+        <div>Totaal: €<span id="cart-total">0.00</span></div>
+        <div class="cart-actions">
+          <button id="continue-shopping" class="btn outline">Verder winkelen</button>
+          <button id="checkout-btn" class="btn primary">Afrekenen</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout-section" class="panel">
+      <h2>Afrekenen</h2>
+      <form id="checkout-form">
+        <div class="form-row">
+          <label>Naam</label>
+          <input id="cust-name" required />
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input id="cust-email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label>Betaalmethode</label>
+          <select id="payment-method" required>
+            <option value="">Kies</option>
+            <option value="card">Betaalkaart</option>
+            <option value="paypal">PayPal</option>
+            <option value="ideal">iDEAL</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="back-to-cart" class="btn outline">Terug</button>
+          <button type="submit" class="btn primary">Bevestig betaling</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="confirmation-section" class="panel">
+      <h2>Bevestiging</h2>
+      <p id="confirmation-message"></p>
+      <button id="shop-again" class="btn">Verder winkelen</button>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

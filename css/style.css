@@ -1,0 +1,99 @@
+/* Basic modern styles */
+:root{
+  --bg:#f7f7f8;
+  --card:#ffffff;
+  --muted:#666;
+  --accent:#111827;
+  --primary:#2563eb;
+  --radius:10px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--accent);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 24px;
+  background:linear-gradient(180deg, #fff, #fbfbfc);
+  border-bottom:1px solid #ececec;
+}
+
+.site-header h1{margin:0;font-size:20px}
+.actions{display:flex;gap:8px;align-items:center}
+
+.btn{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid transparent;
+  background:var(--card);
+  cursor:pointer;
+}
+.btn:hover{filter:brightness(.98)}
+.btn.primary{
+  background:var(--primary);
+  color:white;
+  border-color:transparent;
+}
+.btn.outline{
+  background:transparent;
+  border:1px solid #ddd;
+}
+
+main{padding:20px;max-width:1000px;margin:20px auto}
+.panel{display:none}
+.panel.active{display:block}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+  margin-top:12px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:12px;
+  box-shadow:0 6px 18px rgba(16,24,40,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.card .title{font-weight:600}
+.card .price{font-weight:700;margin-top:auto}
+
+.product-meta{font-size:13px;color:var(--muted)}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  background:var(--card);
+  border-radius:8px;
+  margin-bottom:8px;
+}
+
+.cart-summary{
+  margin-top:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.form-row{margin-bottom:10px;display:flex;flex-direction:column}
+.form-row label{font-size:13px;color:var(--muted);margin-bottom:6px}
+.form-row input, .form-row select{padding:10px;border-radius:8px;border:1px solid #e6e6e6;background:white}
+
+.site-footer{text-align:center;padding:20px;color:var(--muted);font-size:13px}
