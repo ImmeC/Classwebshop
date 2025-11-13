@@ -7,15 +7,12 @@ import Betaling from './betaling.js';
 // Setup winkel & sample data
 const winkel = new Winkel("Imme's Schoenenwinkel");
 
-const sample = [
-  new Product(1, 'Nike Air Max 270', 'Nike', 42, 'zwart', 120, 5, 'Comfortabele sneaker met goede demping.'),
-  new Product(2, 'Adidas Ultraboost', 'Adidas', 43, 'wit', 150, 4, 'Zeer comfortabel met responsieve zool.'),
-  new Product(3, 'Vans Old Skool', 'Vans', 42, 'zwart/wit', 65, 8, 'Klassieke skateschoen.'),
-  new Product(4, 'Puma RS-X', 'Puma', 44, 'grijs', 85, 6, 'Stoere retro-look sneaker.'),
-  new Product(5, 'Converse Chuck Taylor', 'Converse', 41, 'wit', 55, 10, 'Iconische canvas sneaker.')
-];
+const productData = new Product().getAlleProducten();
 
-sample.forEach(p => winkel.voegProductToe(p));
+for (let i = 0; i < productData.length; i++) {
+  const p = productData[i];
+  winkel.voegProductToe(p);
+}
 
 // UI elements
 const productsList = document.getElementById('products-list');
@@ -34,7 +31,7 @@ mandje.producten = stored || [];
 updateCartUI();
 
 // Render products
-function renderProducts(){
+function renderProducts() {
   productsList.innerHTML = '';
   winkel.toonProducten().forEach(p => {
     const card = document.createElement('div');
@@ -51,19 +48,18 @@ function renderProducts(){
     card.querySelector('.add-btn').addEventListener('click', () => {
       mandje.voegProductToe(p);
       updateCartUI();
-      alert(`${p.naam} toegevoegd aan mandje!`);
     });
     productsList.appendChild(card);
   });
 }
 
-function updateCartUI(){
+function updateCartUI() {
   cartCount.textContent = mandje.producten.length;
   cartTotal.textContent = mandje.telEindPrijs().toFixed(2);
 }
 
 // Navigatie helper
-function showPanel(panel){
+function showPanel(panel) {
   document.querySelectorAll('.panel').forEach(sec => sec.classList.remove('active'));
   panel.classList.add('active');
 }
@@ -100,7 +96,7 @@ document.getElementById('checkout-form').addEventListener('submit', (e) => {
   const email = document.getElementById('cust-email').value.trim();
   const method = document.getElementById('payment-method').value;
 
-  if(!name || !email || !method){
+  if (!name || !email || !method) {
     alert('Vul alle velden in.');
     return;
   }
@@ -124,9 +120,9 @@ document.getElementById('shop-again').addEventListener('click', () => {
 });
 
 // Renderen van winkelmandje details
-function renderCart(){
+function renderCart() {
   cartList.innerHTML = '';
-  if(mandje.producten.length === 0){
+  if (mandje.producten.length === 0) {
     cartList.innerHTML = '<p>Je mandje is leeg.</p>';
     cartTotal.textContent = '0.00';
     return;
