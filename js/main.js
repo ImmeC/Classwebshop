@@ -37,12 +37,13 @@ function renderProducts() {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
+      <img class="image" src=${p.afbeelding}>
       <div class="title">${p.naam}</div>
       <div class="product-meta">${p.merk} • Maat ${p.maat} • ${p.kleur}</div>
       <div class="price">€${Number(p.prijs).toFixed(2)}</div>
       <div class="desc">${p.beschrijving}</div>
       <div style="display:flex;gap:8px;margin-top:8px">
-        <button class="btn add-btn">Voeg toe</button>
+        <button class="btn add-btn"></button>
       </div>
     `;
     card.querySelector('.add-btn').addEventListener('click', () => {

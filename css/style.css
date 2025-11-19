@@ -97,3 +97,18 @@ main{padding:20px;max-width:1000px;margin:20px auto}
 .form-row input, .form-row select{padding:10px;border-radius:8px;border:1px solid #e6e6e6;background:white}
 
 .site-footer{text-align:center;padding:20px;color:var(--muted);font-size:13px}
+
+.add-btn {
+  background-position: center;
+  background-image: url(".././icon/shopping-cart.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.add-btn:hover {
+  filter: brightness(0.9);
+}
