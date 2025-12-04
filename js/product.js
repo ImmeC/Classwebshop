@@ -1,6 +1,7 @@
 export default class Product {
-  constructor(id, naam, merk, foto, maat, kleur, prijs, voorraad, beschrijving) {
+  constructor(id, afbeelding, naam, merk, foto, maat, kleur, prijs, voorraad, beschrijving) {
     this.product_ID = id;
+    this.afbeelding = afbeelding;
     this.naam = naam;
     this.merk = merk;
     this.afbeelding = foto;
@@ -13,16 +14,18 @@ export default class Product {
     this.producten = [
       {
         id: 1,
+        afbeelding: './img/nike_air_max_270.png',
         naam: 'Nike Air Max 270',
         merk: 'Nike',
         maat: 42,
-        kleur: 'zwart',
+        kleur: 'wit',
         prijs: 120,
         voorraad: 5,
         beschrijving: 'Comfortabele sneaker met een goede demping.'
       },
       {
         id: 2,
+        afbeelding: './img/adidas_ultraboost.png',
         naam: 'Adidas Ultraboost',
         merk: 'Adidas',
         maat: 43,
@@ -33,6 +36,7 @@ export default class Product {
       },
       {
         id: 3,
+        afbeelding: './img/vans_old_skool.png',
         naam: 'Vans Old Skool',
         merk: 'Vans',
         maat: 42,
@@ -43,6 +47,7 @@ export default class Product {
       },
       {
         id: 4,
+        afbeelding: './img/puma_rs-x.png',
         naam: 'Puma RS-X',
         merk: 'Puma',
         maat: 44,
@@ -53,6 +58,7 @@ export default class Product {
       },
       {
         id: 5,
+        afbeelding: './img/converse_chuck_taylor.png',
         naam: 'Converse Chuck Taylor',
         merk: 'Converse',
         maat: 41,
